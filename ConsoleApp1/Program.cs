@@ -21,6 +21,7 @@ namespace ConsoleApp1
                         {result[counts] = array[i];
                         counts++;}
                     }
+                     Console.WriteLine("результат");
                     PrintM(result);
                 }
 
