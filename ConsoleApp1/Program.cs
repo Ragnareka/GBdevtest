@@ -12,17 +12,29 @@ namespace ConsoleApp1
                     Console.WriteLine(" имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам");
                     Console.WriteLine("Введите массив. для разделения элементов массива используйте ;");
                     string[] array = Console.ReadLine()!.Split(';');
+                    int Uslovie = 3;
                 PrintM(array);
-                   string[] result = new string[array.Length];
+                   
                    int counts = 0;
+
+                   for ( int i=0;i<array.Length;i++)
+                    {
+                        if (array[i].Length >= Uslovie)
+                        {counts++;}
+                    }
+                    if (counts > 0)
+                    { string[] result = new string[counts];
+                     counts = 0;
                     for ( int i=0;i<array.Length;i++)
                     {
-                        if (array[i].Length > 2)
+                        if (array[i].Length >= Uslovie)
                         {result[counts] = array[i];
                         counts++;}
                     }
                      Console.WriteLine("результат");
-                    PrintM(result);
+                    PrintM(result);}
+                    else 
+                    {Console.WriteLine("нет элементов удовлетворяющих условиям");}
                 }
 
             void PrintM(string[] matrix)
